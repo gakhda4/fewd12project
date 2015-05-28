@@ -1,0 +1,307 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+
+//vars
+$fg:#ff4081;
+$bg:#3f51b5;
+$pi:3.14;
+
+//config
+$menu-items:5;
+$open-distance:115px;
+$opening-angle:$pi - .2;
+
+
+.Screenshot {
+  background: url(../../images/Screenshot.jpeg) center center;
+  background-repeat:no-repeat;
+  float:right;
+  width:400px;
+  height:400px;
+  clear:both;
+  padding:40px;
+}
+
+.icon1 {
+  background-image: url(../../images/immuneicon.jpeg);
+  width:50px;
+  background:center;
+}
+
+.HomeDec {
+  height: 250px;
+  background: url(../../images/LinkUrHealth.png) no-repeat center center;
+    background-position: 50% 50%;
+  background-repeat: no-repeat;
+    background-size: cover;
+    position:relative;
+    text-align:center;
+    padding-top:50px;
+    width:100%;
+    overflow:auto;
+}
+
+.HealthRecordCl {
+  height: 300px;
+  background-image: url(../../images/DoctorOffice.png);
+    background-position: 50% 50%;
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position:relative;
+    vertical-align: middle;
+    text-align:center;
+    width:100%;
+}
+
+.HealthDirectoryCl {
+  height: 300px;
+  background-image: url(../../images/YellowPage.jpg);
+    background-position: 50% 50%;
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position:relative;
+    vertical-align: middle;
+    text-align:center;
+    width:100%;
+}
+
+.HealthCalendarCl {
+  height: 300px;
+  background-image: url(../../images/Calendar.jpg);
+    background-position: 50% 50%;
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position:relative;
+    vertical-align: middle;
+    text-align:center;
+    width:100%;
+}
+
+h1 {
+  color:#00BCD4;
+  font-size:70px;
+  line-height:3.5;
+  text-align:center;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  line-height:1.4;
+}
+
+h2 {
+  font-size:30px;
+  color:#009688;
+  text-align:center;
+  padding-top:20px;
+}
+/*studio code calendar for the calendar image */
+
+div {
+  width:1000px;
+  margin:0 auto;
+  padding:40px;
+}
+
+.hamburger {
+  display:none;
+}
+
+nav {
+  float: right;
+}
+nav li {
+  float: left;
+  padding-bottom:50px;
+}
+
+nav a {
+  display: block;
+  padding: 20px 15px;
+  color:gray;
+  text-decoration:none;
+}
+nav li a:hover {
+  color: black;
+}
+nav li.active a {
+  background: #666;
+}
+
+@media screen and (max-width:960px) {
+  nav li {
+    float: inherit;
+  }
+  .tout{
+    width: 90%;
+    margin:5px;
+    box-shadow:none;
+  }
+
+  a.menu{
+    display:inline-block;
+    font-size:30px;
+    position:absolute;
+    top:10px;
+    right:10px;
+    padding:0;
+  }
+
+  .hamburger{
+    color:gray;
+    text-decoration:none;
+  }
+  nav ul, nav li, nav a.navigation{
+    width:100%;
+    text-align:center;
+  }
+
+
+  a.container {
+  padding: none;
+  max-width: 100%;
+  overflow:auto;
+  }
+
+
+  .title {
+    display:inline-block;
+    overflow:auto;
+  }
+
+  .desktop-only {
+    display:none;
+  }
+
+  .blurb {
+    width:50%;
+  }
+}
+
+%goo{
+  filter:url('#shadowed-goo');
+  // debug 
+  // background:rgba(255,0,0,0.2);
+}
+%ball{
+  background:$fg;
+  border-radius:100%;
+  width:80px;
+  height:80px;
+  margin-left:-40px;
+  position:absolute;
+  top:20px;
+  color:white;
+  text-align:center;
+  line-height:80px;
+  transform:translate3d(0,0,0);
+  transition:transform ease-out 200ms;
+}
+.menu-open{
+  display:none;
+}
+.menu-item{
+  @extend %ball;
+}
+.hamburger{
+  $width:25px;
+  $height:3px;
+  width:$width;
+  height:$height;
+  background:white;
+  display:block;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-left:-$width/2;
+  margin-top:-$height/2;
+  transition:transform 200ms;
+}
+$hamburger-spacing:8px;
+.hamburger-1{
+  transform:translate3d(0,-$hamburger-spacing,0);
+}
+.hamburger-2{
+  transform:translate3d(0,0,0);
+}
+.hamburger-3{
+  transform:translate3d(0,$hamburger-spacing,0);
+}
+.menu-open:checked+.menu-open-button{
+  .hamburger-1{
+    transform:translate3d(0,0,0) rotate(45deg); 
+  }
+  .hamburger-2{
+    transform:translate3d(0,0,0) scale(0.1,1);
+  }
+  .hamburger-3{
+    transform:translate3d(0,0,0) rotate(-45deg); 
+  }
+}
+.menu{
+  @extend %goo;
+  $width:380px;
+  $height:250px;
+  position:absolute;
+  left:50%;
+  margin-left:-$width/2;
+  padding-top:10px;
+  padding-left:$width/2;
+  width:$width;
+  height:$height;
+  box-sizing:border-box;
+  font-size:20px;
+  text-align:left;
+}
+
+
+.menu-item{
+  &:hover{
+    background:white;
+    color:$fg;
+  }
+  @for $i from 1 through $menu-items{
+    &:nth-child(#{$i+2}){
+      transition-duration:10ms+(60ms*($i));
+    }
+  }
+}
+
+.menu-open-button{
+  @extend %ball;
+  z-index:2;
+  transition-timing-function:cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  transition-duration:400ms;
+  transform:scale(1.1,1.1) translate3d(0,0,0);
+  cursor:pointer;
+}
+.menu-open-button:hover{
+  transform:scale(1.2,1.2) translate3d(0,0,0);
+}
+.menu-open:checked+.menu-open-button{
+  transition-timing-function:linear;
+  transition-duration:200ms;
+  transform:scale(0.8,0.8) translate3d(0,0,0);
+}
+
+.menu-open:checked~.menu-item{
+  transition-timing-function:cubic-bezier(0.935, 0.000, 0.340, 1.330);
+  @for $i from 1 through $menu-items{
+    $angle:(($pi - $opening-angle)/2)+(($opening-angle/($menu-items - 1))*($i - 1));
+    
+    &:nth-child(#{$i+2}){
+      transition-duration:80ms+(80ms*$i);
+      transform:translate3d(cos($angle)*$open-distance,sin($angle)*$open-distance,0);
+    }
+  }
+}
+
+

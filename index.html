@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>LinkUrHealth</title>
+	<link rel="stylesheet" href="sass-test/sass/reset.css">
+	<link rel="stylesheet" type="text/css" href="sass-test/stylesheets/screen.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+	<header>
+		<nav class="menu">
+		  <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+		  <label class="menu-open-button" for="menu-open">
+		    <span class="hamburger hamburger-1"></span>
+		    <span class="hamburger hamburger-2"></span>
+		    <span class="hamburger hamburger-3"></span>
+		  </label>
+
+		  <a href="index.html" class="menu-item"> <i class="fa fa-bar-chart"></i> Home</a>
+		  <a href="AboutUs.html" class="menu-item"> <i class="fa fa-plus"></i>About Us</a>
+		  <a href="News.html" class="menu-item"> <i class="fa fa-heart"></i>News</a>
+		  <a href="Application.html" class="menu-item"> <i class="fa fa-envelope">Get the Application Here!</i> </a>
+		</nav>
+
+
+		<!-- filters -->
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+		    <defs>
+		      <filter id="shadowed-goo">
+		          
+		          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+		          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+		          <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+		          <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+		          <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+		          <feBlend in2="shadow" in="goo" result="goo" />
+		          <feBlend in2="goo" in="SourceGraphic" result="mix" />
+		      </filter>
+		      <filter id="goo">
+		          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+		          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+		          <feBlend in2="goo" in="SourceGraphic" result="mix" />
+		      </filter>
+		    </defs>
+		</svg>
+	</header>
+	<section id = "Home">
+	<!--Home Section -->
+		<div class = "HomeDec"></div>
+		<h1> Your Health. Your Information </h1>
+		
+		<div> 
+			<p>Life is busy nowadays. Wouldn't it be nice to have one place for all of your health appointments, doctor information, and immunization records?</p>
+			<br/>
+			<p>At LinkURHealth we understand that you don't have time to enter information into different repositories.</p>
+			<br/>
+			<p>That's why we made it easy - send a secure email to our system, and we will populate everything into our convenient app for you.</p>
+		</div>
+	</section>
+	<section id = "HealthCalendar">
+	<!--My Health Calendar Section -->
+		<div class = "HealthCalendarCl"><h1> My Health Calendar </h1></div>
+		<h2> Your Calendar. Your Time </h2>
+		<div>
+			<p> Sometimes appointments get lost in the shuffle. Oftentimes, the 24 hour reminder calls creep up on us before we've realized the commitment we've made. <br/> My Health Calendar allows you to send a secure email to LinkURHealth, which automatically populates your calendar with your appointment times. You will be able to see both upcoming and past appointments, so you can easily look up the day of your last annual or your kid's last vaccination. </p>
+		</div>
+	</section>
+	<section id ="HealthRecord">
+	<!--Health Record Section-->
+		<div class ="HealthRecordCl"><h1> My Health Record </h1></div>
+		<h2> Your health in your hands. </h2>
+		<div>
+		<div class = "Screenshot">
+		</div>
+		<div class = "icon1"><img src="images/immuneicon.jpeg" alt="pills" width=360px height=190px></div>
+			<p><span style="color:green">Immunization Records </span>:Your health record contains a history of all of your immunizations. No longer will you have to call the doctor to fill out another camp form. Instead, the information is right here in your hands.</p>
+				<br/>
+			<p><span style="color:green">Medication Records </span>: Explore your medications in your health record using LinkURHealth's application. Medications (both prescription and over the counter) are automatically updated from your health record in a list so you can easily export it for various camp forms, trip forms, or hospitals. </p>
+				<br/>
+			<p><span style="color:green"> Medical Records </span> : Your medical record contains detailed information about all of your medical history - including allergies, hospital visits, family histories, and more. This type of information should be at the tip of your fingers if any sort of emergency comes up. With LinkURHealth, you can upload your medical record and have it in an easy to read format at a moment's notice. </p>
+		</div>
+		
+
+	</section>
+	<section id = "HealthDirectory">
+	<!--Health Directory Section -->
+		<div class = "HealthDirectoryCl"><h1> My Health Directory </h1></div>
+		<h2> The yellow-book reinvented. </h2>
+		<div>
+			<p>Your health directory contains all the important contact information for your family's health needs. Instead of having to enter in each contact's information, why not send a simple email and have everything populated into an application for you? The health directory contains information about your doctors and pharmacies, keeping track of the doctor specialties and allowing you to call them straight from the application.</p>
+		</div>
+	</section>
+</body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type="text/javascript" src="js/Hamburger.js"></script>
+</html>
